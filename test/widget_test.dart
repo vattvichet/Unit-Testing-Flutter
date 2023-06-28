@@ -12,21 +12,33 @@ import 'package:unit_testing/controller.dart';
 import 'package:unit_testing/main.dart';
 
 void main() {
+  late MainController controller;
+  setUp(() {
+    controller = MainController();
+  });
+  test("expect to be 0", () {
+    // Arrange
+
+    // Act
+    var result = controller.number.value;
+    // Assert
+    expect(result, 0);
+  });
   test("expect to be 5", () {
     // Arrange
-    MainController controller = MainController();
-    controller.five();
+
     // Act
-    int result = controller.number.value;
+    controller.five();
+    var result = controller.number.value;
     // Assert
     expect(result, 5);
   });
   test("expect to be 10", () {
     // Arrange
-    MainController controller = MainController();
-    controller.ten();
+
     // Act
-    int result = controller.number.value;
+    controller.ten();
+    var result = controller.number.value;
     // Assert
     expect(result, 10);
   });
